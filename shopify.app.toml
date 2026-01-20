@@ -2,7 +2,7 @@
 
 client_id = "0e6f97fd43b1dd93c358e9783303481c"
 name = "Pricify"
-application_url = "https://pricify-nine.vercel.app"
+application_url = "https://pricify-three.vercel.app"
 embedded = true
 
 [build]
@@ -27,4 +27,4 @@ optional_scopes = [ ]
 use_legacy_install_flow = false
 
 [auth]
-redirect_urls = [ "https://pricify-nine.vercel.app/api/auth" ]
+redirect_urls = [ "https://pricify-three.vercel.app/api/auth" ]
