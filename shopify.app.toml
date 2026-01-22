@@ -2,15 +2,20 @@
 
 client_id = "0e6f97fd43b1dd93c358e9783303481c"
 name = "Pricify"
-application_url = "https://example.com"
+application_url = "https://prestigecity-indirapuram.net"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2026-04"
+
+  # THIS IS THE NEW SECTION THAT FIXES THE ERROR
+  [webhooks.privacy_compliance]
+  customer_data_request_url = "https://prestigecity-indirapuram.net/webhooks/gdpr"
+  customer_deletion_url = "https://prestigecity-indirapuram.net/webhooks/gdpr"
+  shop_deletion_url = "https://prestigecity-indirapuram.net/webhooks/gdpr"
 
   [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
@@ -22,9 +27,14 @@ api_version = "2026-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "read_products,write_products"
 optional_scopes = [ ]
 use_legacy_install_flow = false
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+# I updated these to match your live domain
+redirect_urls = [
+  "https://prestigecity-indirapuram.net/auth/callback",
+  "https://prestigecity-indirapuram.net/auth/shopify/callback",
+  "https://prestigecity-indirapuram.net/api/auth/callback"
+]
